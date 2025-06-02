@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/diploma/front/assets/create-style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <title>TestPilot - Create</title>
+</head>
+<body>
+  <div class="header">
+    <span class="home"><img src="/diploma/front/svg/logo.svg" alt="home"></span>
+    <span class="header-title"><h2>Create</h2></span>
+    <button type="submit" id="publish-button">Publish</button>
+  </div>
+  <div class="content" id="form-content">
+    <div class="content-form">
+      <input type="text" id="form-name" class="form-name" placeholder="Untitled form"><br>
+      <input type="text" id="form-description" class="form-description" placeholder="Form description">
+    </div>
+    <div class="questions" id="form-questions">
+      <div class="question" data-index="0">
+        <input type="text" id="question-name" class="question-name" placeholder="Untitled question">
+          <div class="answers">
+            <input type="text" class="answer" placeholder="Answer option">
+            <input type="text" class="answer" placeholder="Answer option">
+          </div>
+        <button class="add-answer">+ Add answer</button>
+      </div>
+      <button id="add-question">+ Add question</button>
+    </div>
+  </div>
+</body>
+</html>
