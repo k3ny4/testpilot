@@ -7,14 +7,14 @@ const PORT = 3000;
 const DATA_FILE = path.resolve('./tests.json');
 
 app.use(express.json());
-app.use(express.static('front')); // Подаємо статичні файли (html, css, js)
+app.use(express.static('front'));
 
 async function readTests() {
   try {
     const data = await fs.readFile(DATA_FILE, 'utf-8');
     return JSON.parse(data);
   } catch (err) {
-    if (err.code === 'ENOENT') return []; // Якщо файла нема, повертаємо пустий масив
+    if (err.code === 'ENOENT') return [];
     throw err;
   }
 }
@@ -23,13 +23,11 @@ async function writeTests(tests) {
   await fs.writeFile(DATA_FILE, JSON.stringify(tests, null, 2));
 }
 
-// Отримати всі тести
 app.get('/api/tests', async (req, res) => {
   const tests = await readTests();
   res.json(tests);
 });
 
-// Створити новий тест
 app.post('/api/tests', async (req, res) => {
   const newTest = req.body;
   if (!newTest.name || !newTest.questions) {
@@ -37,14 +35,12 @@ app.post('/api/tests', async (req, res) => {
   }
   const tests = await readTests();
 
-  // Додаємо унікальний id (простіший варіант)
   newTest.id = Date.now().toString();
   tests.push(newTest);
   await writeTests(tests);
   res.status(201).json(newTest);
 });
 
-// Оновити тест за id
 app.put('/api/tests/:id', async (req, res) => {
   const testId = req.params.id;
   const updatedTest = req.body;
