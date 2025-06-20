@@ -4,13 +4,11 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 const DB_PATH = path.join(__dirname, 'local-db', 'tests.json');
 
 app.use(cors());
 app.use(express.json());
-
-// Статика з папки front (звідки доступні /pages/index-en.html, /pages/editpage.html тощо)
 app.use(express.static(path.join(__dirname, '../front')));
 
 function readTests() {

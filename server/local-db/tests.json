@@ -1,28 +1,14 @@
 [
   {
-    "id": 1750304565551,
+    "id": 1750320605321,
     "name": "Math",
-    "description": "",
+    "description": "Math test",
     "questions": [
       {
         "question": "1+1",
         "answers": [
           "2",
           "5"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 1750309737661,
-    "name": "12",
-    "description": "3",
-    "questions": [
-      {
-        "question": "1",
-        "answers": [
-          "1",
-          "1"
         ]
       }
     ]
